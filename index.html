@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="403.css">
+    <link rel="stylesheet" href="404.css">
+    <link rel="stylesheet" href="500.css">
+
+    <style>
+        /**, *:after, *:before {*/
+        /*    box-sizing: border-box;*/
+        /*}*/
+
+        /*p {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*p:after {*/
+        /*    content: "not downloaded";*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+    <p>Current page is: <pre id="current-page"></pre></p>
+
+    <h1>Relative</h1>
+    <h2>Normal links</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/sub1">Subpage 1</a></li>
+        <li><a href="/sub2">Subpage 2</a></li>
+        <li><a href="/sub3">Subpage 3</a></li>
+    </ul>
+
+    <h2>Hahsbang</h2>
+    <ul>
+        <li><a href="/#" onclick="setTimeout(printCurrentPage, 10)">Home</a></li>
+        <li><a href="/#/sub1" onclick="setTimeout(printCurrentPage, 10)">Subpage 1</a></li>
+        <li><a href="/#/sub2" onclick="setTimeout(printCurrentPage, 10)">Subpage 2</a></li>
+        <li><a href="/#/sub3" onclick="setTimeout(printCurrentPage, 10)">Subpage 3</a></li>
+    </ul>
+
+    <h2>HTML5 History API</h2>
+    <ul>
+        <li><a href="http://main-c9-erykpiast.c9.io/" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Home</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub1" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 1</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub2" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 2</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub3" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 3</a></li>
+    </ul>
+
+    <hr>
+
+    <h1>Absolute</h1>
+    <h2>Normal links</h2>
+    <ul>
+        <li><a href="http://main-c9-erykpiast.c9.io/">Home</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub1">Subpage 1</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub2">Subpage 2</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub3">Subpage 3</a></li>
+    </ul>
+
+    <h2>Hahsbang</h2>
+    <ul>
+        <li><a href="http://main-c9-erykpiast.c9.io/#" onclick="setTimeout(printCurrentPage, 10)">Home</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/#/sub1" onclick="setTimeout(printCurrentPage, 10)">Subpage 1</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/#/sub2" onclick="setTimeout(printCurrentPage, 10)">Subpage 2</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/#/sub3" onclick="setTimeout(printCurrentPage, 10)">Subpage 3</a></li>
+    </ul>
+
+    <h2>HTML5 History API</h2>
+    <ul>
+        <li><a href="http://main-c9-erykpiast.c9.io/" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Home</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub1" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 1</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub2" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 2</a></li>
+        <li><a href="http://main-c9-erykpiast.c9.io/sub3" onclick="event.preventDefault(); window.history.pushState({ page: event.target.innerHTML }, event.target.innerHTML, event.target.getAttribute('href')); printCurrentPage()">Subpage 3</a></li>
+    </ul>
+
+    <h1>Dynamic</h1>
+
+    <nav style="display: block">
+        <button onclick="addAbsoluteUrl()">ABSOLUTE</button>
+        <button onclick="addRelativeUrl()">RELATIVE</button>
+        <button onclick="addAbsoluteHashUrl()">ABSOLUTE HASH</button>
+        <button onclick="addRelativeHashUrl()">RELATIVE HASH</button>
+    </nav>
+
+    <!--<script src="http://10.10.10.69:9091/target/target-script-min.js#anonymous"></script>-->
+    <!--<script type="text/javascript">(function(){var host="https://10.10.10.69";var trackerPath="/recorder/tracker/";var attachScript=function(s,o,g,l,a){a=s.createElement(o);a.async=1;a.onload=l;a.src=g;s.head.appendChild(a)}.bind(null,window.document,"script");attachScript(host+trackerPath+"debugger.js");attachScript(host+trackerPath+"tracker.js")})();</script>-->
+
+
+
+    <script>
+        function addAbsoluteUrl() {
+            document.body.innerHTML += '<a href="http://main-c9-erykpiast.c9.io/dynamic1">Dynamic absolute URL</a>';
+        }
+
+        function addRelativeUrl() {
+            document.body.innerHTML += '<a href="/dynamic1">Dynamic relative URL</a>';
+        }
+
+        function addAbsoluteHashUrl() {
+            document.body.innerHTML += '<a href="http://main-c9-erykpiast.c9.io/#/dynamic1">Dynamic absolute hash URL</a>';
+        }
+
+        function addRelativeHashUrl() {
+            document.body.innerHTML += '<a href="#/dynamic1">Dynamic relative hash URL</a>';
+        }
+
+        function printCurrentPage() {
+            var currentPageContainer = document.getElementById('current-page');
+
+            currentPageContainer.innerHTML = [ 'path: ' + window.location.pathname, 'hash: ' + window.location.hash ].join('\n');
+        }
+
+        printCurrentPage();
+    </script>
+</body>
+</html>

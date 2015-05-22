@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/v0.10.30/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/v0.10.30/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'test' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info pretest anti-cross-domain-test@0.0.1
+6 info test anti-cross-domain-test@0.0.1
+7 verbose unsafe-perm in lifecycle true
+8 info anti-cross-domain-test@0.0.1 Failed to exec test script
+9 error anti-cross-domain-test@0.0.1 test: `echo "Error: no test specified" && exit 1`
+9 error Exit status 1
+10 error Failed at the anti-cross-domain-test@0.0.1 test script.
+10 error This is most likely a problem with the anti-cross-domain-test package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     echo "Error: no test specified" && exit 1
+10 error You can get their info via:
+10 error     npm owner ls anti-cross-domain-test
+10 error There is likely additional logging output above.
+11 error System Linux 3.14.13-c9
+12 error command "/home/ubuntu/.nvm/v0.10.30/bin/node" "/home/ubuntu/.nvm/v0.10.30/bin/npm" "run" "test"
+13 error cwd /home/ubuntu/workspace/anti-cross-domain-test
+14 error node -v v0.10.30
+15 error npm -v 1.4.21
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]

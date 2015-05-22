@@ -1,0 +1,6 @@
+.css404 {
+    color: green;
+}
+    .css404:after {
+        content: "downloaded";
+    }

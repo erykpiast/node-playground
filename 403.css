@@ -1,0 +1,10 @@
+.css403 {
+    color: green;
+    /*position: absolute;*/
+    /*left: 400px;*/
+    /*top: 400px;*/
+}
+    .css403:after {
+        content: "downloaded";
+        /*box-shadow: 0 0 0 1px #000 inset;*/
+    }

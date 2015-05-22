@@ -1,0 +1,6 @@
+.css500 {
+    color: green;
+}
+    .css500:after {
+        content: "downloaded";
+    }
