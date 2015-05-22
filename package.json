@@ -1,7 +1,7 @@
 {
-  "name": "node-playground",
+  "name": "anti-cross-domain-test",
   "version": "0.0.1",
-  "description": "Just a sandbox for playing with Node.js",
+  "description": "test for blocking Cross-Domain requests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
